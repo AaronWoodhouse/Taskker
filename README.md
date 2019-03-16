@@ -6,11 +6,7 @@ both using the linux command line with bash:
 
 >make
 
-or in the case it is already made:
-
->make
-
-or
+or in the case it is already made, this also works:
 
 >./tasks
 
