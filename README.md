@@ -6,10 +6,10 @@ both using the linux command line with bash:
 
 >make
 
-or in the case it doesn't work:
+or in the case it is already made:
 
 >make
-
+or
 >./tasks
 
 Done is similar to that of a checkmark for tasks
