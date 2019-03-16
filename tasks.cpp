@@ -125,8 +125,8 @@ void TaskSet::save() {
   for (int i = 0; i < tasks.size(); i++) {
     fo << tasks[i]._complete << " " << tasks[i]._info << " "
          << tasks[i]._date << " " << tasks[i]._priority << endl;
-    fo.close();
   }
+  fo.close();
   cout << "Saved" << endl << endl;
 }
 
@@ -189,4 +189,16 @@ void TaskSet::getTask() {
   cout << endl << tasks[id]._complete << " " << tasks[id]._info << " "
        << tasks[id]._date << " " << tasks[id]._priority  << " " << id
        << endl << endl;
+}
+void TaskSet::removeCompleted() {
+  vector<int> ids;
+
+  for (int i = 0; i < tasks.size(); i++) {
+    if (tasks[i]._complete == 1) { ids.push_back(i); }
+  }
+
+  for (int i = 0; i < ids.size(); i++) {
+    tasks.erase(tasks.begin()+ids[i]);
+  }
+
 }

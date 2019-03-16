@@ -20,8 +20,8 @@ int main() {
 
     cout << "type 'help' for a list of actions" << endl << endl;
 
-    int size = 16;
-    string commands [size] = {"help", "add", "remove", "complete", "info", "date", "priority", "load", "save", "name", "quit", "removeAll", "removeThese", "completeThese", "task", "clear"};
+    int size = 17;
+    string commands [size] = {"help", "add", "remove", "complete", "info", "date", "priority", "load", "save", "name", "quit", "removeAll", "removeThese", "completeThese", "task", "clear", "removeCompleted"};
 
     int cmd = -1;
     string inp;
@@ -44,7 +44,7 @@ int main() {
     if (!exit) {
       switch (cmd) {
         case 0:
-          cout << "\nhelp, add, remove, complete, info, date, priority, import, export, name, quit, removeAll, removeThese, completeThese, task, clear\n\n";
+          cout << "\nhelp, add, remove, complete, info, date, priority, import, export, name, quit, removeAll, removeThese, completeThese, task, clear, removeCompleted\n\n";
           update = 0;
           break;
         case 1:
@@ -93,6 +93,9 @@ int main() {
           break;
         case 15:
           system("clear");
+          break;
+        case 16:
+          t.removeCompleted();
           break;
         default:
           cout << "Please enter a valid action..." << endl;

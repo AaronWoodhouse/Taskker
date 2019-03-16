@@ -49,6 +49,8 @@ public:
 
   void getTask();
 
+  void removeCompleted();
+
 };
 
 #endif
