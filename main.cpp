@@ -18,8 +18,6 @@ int main() {
 
     cout << "type 'help' for a list of actions" << endl << endl;
 
-    //string inp;
-
     int size = 16;
     string commands [size] = {"help", "add", "remove", "complete", "info", "date", "priority", "load", "save", "name", "quit", "removeAll", "removeThese", "completeThese", "task", "clear"};
 
