@@ -44,7 +44,7 @@ int main() {
     if (!exit) {
       switch (cmd) {
         case 0:
-          cout << "\nhelp, add, remove, complete, info, date, priority, import, export, name, quit, removeAll, removeThese, completeThese\n\n";
+          cout << "\nhelp, add, remove, complete, info, date, priority, import, export, name, quit, removeAll, removeThese, completeThese, task, clear\n\n";
           update = 0;
           break;
         case 1:
