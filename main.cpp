@@ -71,6 +71,7 @@ int main() {
           break;
         case 8:
           t.save();
+          update = 0;
           break;
         case 9:
           t.changeName();

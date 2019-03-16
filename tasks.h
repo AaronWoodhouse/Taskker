@@ -40,6 +40,7 @@ public:
   void save();
 
   void changeName();
+  void changeName(string name);
   string getName();
 
   void removeAll();

@@ -104,26 +104,30 @@ void TaskSet::load() {
   bool complete;
   string info, date;
   int priority;
+  string name;
 
   string filename = "saveFile.txt";
   ifstream fi(filename);
   removeAll();
+  fi >> name;
   while(!fi.eof()) {
     fi >> complete >> info >> date >> priority;
     addTask(complete, info, date, priority);
   }
+  changeName(name);
   fi.close();
   tasks.pop_back();
 }
 void TaskSet::save() {
   string filename = "saveFile.txt";
   ofstream fo(filename);
+  fo << _name << " ";
   for (int i = 0; i < tasks.size(); i++) {
     fo << tasks[i]._complete << " " << tasks[i]._info << " "
          << tasks[i]._date << " " << tasks[i]._priority << endl;
     fo.close();
   }
-  cout << "Saved" << endl;
+  cout << "Saved" << endl << endl;
 }
 
 void TaskSet::changeName() {
@@ -133,6 +137,7 @@ void TaskSet::changeName() {
   _name = name;
   cout << endl;
 }
+void TaskSet::changeName(string name) { _name = name; }
 string TaskSet::getName() { return _name; }
 
 void TaskSet::removeAll() {
