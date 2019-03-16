@@ -16,16 +16,17 @@ int main() {
     cout << "Displaying " << t.getName() << endl << endl;
     t.displayTasks();
 
-    cout << "type 'help' for a list of actions" << endl;
+    cout << "type 'help' for a list of actions" << endl << endl;
 
     //string inp;
 
-    int size = 14;
-    string commands [size] = {"help", "add", "remove", "complete", "info", "date", "priority", "load", "save", "name", "quit", "removeAll", "removeThese", "completeThese"};
+    int size = 16;
+    string commands [size] = {"help", "add", "remove", "complete", "info", "date", "priority", "load", "save", "name", "quit", "removeAll", "removeThese", "completeThese", "task", "clear"};
 
     int cmd = -1;
     string inp;
     while(true) {
+      update = 1;
       cout << "Action: ";
       cin >> inp;
 
@@ -44,7 +45,7 @@ int main() {
       switch (cmd) {
         case 0:
           cout << "\nhelp, add, remove, complete, info, date, priority, import, export, name, quit, removeAll, removeThese, completeThese\n\n";
-               update = 0;
+          update = 0;
           break;
         case 1:
           t.addTask();
@@ -85,12 +86,21 @@ int main() {
         case 13:
           t.completeThese();
           break;
+        case 14:
+          t.getTask();
+          update = 0;
+          break;
+        case 15:
+          system("clear");
+          break;
         default:
           cout << "Please enter a valid action..." << endl;
       }
     }
 
   }
+
+  cout << "Exiting..." << endl;
 
   return 0;
 }

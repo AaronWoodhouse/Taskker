@@ -80,12 +80,22 @@ void TaskSet::setPriority() {
 }
 
 void TaskSet::displayTasks() {
-  cout << "Done Description Date Priority ID" << endl;
-  cout << "-------------------------------------" << endl;
+  cout << "Done Description      Date       Priority ID" << endl;
+  cout << "---------------------------------------------" << endl;
   for (int i = tasks.size() - 1; i >= 0; i--) {
-    cout << tasks[i]._complete << " " << tasks[i]._info << " "
-         << tasks[i]._date << " " << tasks[i]._priority  << " " << i
-         << endl;
+    cout << tasks[i]._complete << "    ";
+
+    for (int k = 0; k < 16; k++) {
+      cout << tasks[i]._info[k]; // only first 16 of info
+    }
+
+    cout << " ";
+
+    for (int k = 0; k < 10; k++) {
+      cout << tasks[i]._date[k]; // only first 10 of date
+    }
+
+    cout  << " " << tasks[i]._priority  << "        " << i << endl;
   }
   cout << endl;
 }
@@ -130,8 +140,9 @@ void TaskSet::removeAll() {
   cout << "Do you want to remove all tasks? (Y/N)" << endl;
   cin >> inp;
 
-  if (inp == 'Y') { tasks.clear(); }
-  else            { cout << "Cancelling..." << endl; }
+  if (inp == 'Y' || inp == 'y') { tasks.clear(); }
+  else            { cout << "Keeping Tasks..." << endl; }
+  cout << endl;
 
 }
 void TaskSet::removeThese() {
@@ -165,4 +176,12 @@ void TaskSet::completeThese() {
     else                    { tasks[ids[i]]._complete = 1; }
   }
   cout << endl;
+}
+void TaskSet::getTask() {
+  int id;
+  cout << "ID of task to view: ";
+  cin >> id;
+  cout << endl << tasks[id]._complete << " " << tasks[id]._info << " "
+       << tasks[id]._date << " " << tasks[id]._priority  << " " << id
+       << endl << endl;
 }

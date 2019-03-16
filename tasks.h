@@ -46,6 +46,8 @@ public:
   void removeThese();
   void completeThese();
 
+  void getTask();
+
 };
 
 #endif
