@@ -10,7 +10,11 @@ or in the case it is already made, this also works:
 
 >./tasks
 
+
 Done is similar to that of a checkmark for tasks
+
 Date is a string that users can use their own date formatting for
+
 Priority is an integer value
+
 ID is used for commands
